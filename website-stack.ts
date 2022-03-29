@@ -11,10 +11,15 @@ export class WebsiteStack extends cdk.Stack {
       bucketName: `${config.PROJECT_NAME}-bucket`,
       publicReadAccess: true,      
       websiteIndexDocument: config.WEBSITE.WEBSITE_INDEX_PAGE,
-      websiteErrorDocument: config.WEBSITE.WEBSITE_ERROR_PAGE
+      websiteErrorDocument: config.WEBSITE.WEBSITE_ERROR_PAGE      
     });
+
     
-    new cdk.CfnOutput(this, 'Bucket Name', { value: s3Bucket_staticwebsite.bucketName });
+    
+    new cdk.CfnOutput(this, 'Bucket Name', { 
+      value: s3Bucket_staticwebsite.bucketName,
+      exportName: "sample-s3-bucket" //Export name to reference this in other stack
+     });
     new cdk.CfnOutput(this, "URL", {value: s3Bucket_staticwebsite.bucketWebsiteUrl});
   }
 }
