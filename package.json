@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@aws-cdk/aws-s3": "^1.150.0",
-    "@aws-cdk/core": "1.150.0"
+    "@aws-cdk/core": "1.150.0",
+    "aws-cdk-lib": "^2.50.0"
   }
 }
