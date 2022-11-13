@@ -8,7 +8,7 @@ export class WebsiteStack extends cdk.Stack {
     super(scope, id, props);
 
     const s3Bucket_staticwebsite:s3.Bucket = new s3.Bucket(this, 'static-website-bucket', {
-      bucketName: `${config.PROJECT_NAME}-bucket`,
+      bucketName: `${config.PROJECT_NAME}`,
       publicReadAccess: true,      
       websiteIndexDocument: config.WEBSITE.WEBSITE_INDEX_PAGE,
       websiteErrorDocument: config.WEBSITE.WEBSITE_ERROR_PAGE      
